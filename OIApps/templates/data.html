@@ -1,0 +1,47 @@
+{% extends "base.html" %} 
+
+    {% block content %}
+    
+    <p>
+      <h4> OI Cache configurations for user</h3>
+    </p>
+ 
+    <table class="table table-bordered  border-primary">
+        <thead>
+            <tr>
+                <th scope="col">Category name</th>
+                <th scope="col">ResponseData</th>
+                <th scope="col">App ID</th>
+                <th scope="col">Created By</th>
+                <th scope="col">Type</th>
+                <th scope="col">Data Category</th>
+            </tr>
+        </thead>
+        <tbody>
+      
+      <tr>
+      {% for c in Category%}
+
+      <div class="row" aria-flowto="mb-4">
+
+          <td scope="row" align="left"> {{c.name}} </td>
+          <td scope="row" align="left"> {{c.ResponseData}} </td>
+          <td scope="row" align="left"> {{c.App.AppID}} </td>
+          <td scope="row" align="left"> {{c.CreatedByUser}} </td>
+          <td scope="row" align="left"> {{c.Type}} </td>
+          <td scope="row" > {{ c.DataCategory}} </td>
+      </div>
+
+      {% endfor %}
+    </tr>
+
+</tbody>
+</table> 
+    <p>
+
+    </p>
+
+
+
+
+{% endblock content %}
