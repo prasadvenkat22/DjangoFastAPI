@@ -1,3 +1,11 @@
 pip install django-bootstrap-v5
 
  pip install django-cors-headers
+
+docker build -t jango-web .
+
+docker run -d -p 8080:8000  -v src:/django-web --name django-web-app django-web
+
+docker exec -it django-web  /bin/bash
+
+python manage.py createsuperuser
